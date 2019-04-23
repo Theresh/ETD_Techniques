@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2018.1.31)  23 APR 2019 12:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2018.1.31)  23 APR 2019 12:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -469,13 +469,13 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-No file others.aux.
+) (./others.aux)
 \openout1 = `others.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 115.
 LaTeX Font Info:    Try loading font information for OML+txmi on input line 115
 .
+
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
@@ -576,8 +576,12 @@ LaTeX Font Info:    Try loading font information for U+txsyc on input line 228.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
+) (./others.toc
+Underfull \hbox (badness 10000) in paragraph at lines 2--2
+[][]\OT1/txr/bx/n/12 Physical Layer Fram- 
+ []
+
 )
-No file others.toc.
 \tf@toc=\write3
 \openout3 = `others.toc'.
 
@@ -590,9 +594,6 @@ Underfull \hbox (badness 2253) in paragraph at lines 244--246
 Underfull \hbox (badness 10000) in paragraph at lines 244--246
 
  []
-
-
-LaTeX Warning: Reference `fig:inter' on page 1 undefined on input line 248.
 
 File: ./images/bit_inter.eps Graphic file (type eps)
 <./images/bit_inter.eps>
@@ -610,13 +611,13 @@ File: ./images//parameters_pl_frame.eps Graphic file (type eps)
 
 LaTeX Warning: Citation `dvb' on page 1 undefined on input line 300.
 
-
-LaTeX Warning: Citation `dvb' on page 1 undefined on input line 306.
-
 [1
 
 
 ]
+
+LaTeX Warning: Citation `dvb' on page 2 undefined on input line 306.
+
 No file others.bbl.
 [2
 
@@ -624,17 +625,14 @@ No file others.bbl.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 7272 strings out of 493305
- 106847 string characters out of 6139897
- 170286 words of memory out of 5000000
+ 7276 strings out of 493305
+ 106891 string characters out of 6139897
+ 169286 words of memory out of 5000000
  10607 multiletter control sequences out of 15000+600000
  62210 words of font info for 151 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  36i,17n,38p,286b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on others.dvi (2 pages, 6140 bytes).
+Output written on others.dvi (2 pages, 6380 bytes).
