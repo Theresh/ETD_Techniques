@@ -217,7 +217,7 @@ Efficient Transmitter Design Techniques in Digital Communication
 
 
 
-\author{Theresh Babu Benguluri,Sandeep Kumar,Siddharth Mourya,Sai Manasa,Raktim Goswami,Abhishek Bairagi , G V V Sharma$^{*}$% <-this % stops a space
+\author{Theresh Babu Benguluri,Sandeep Kumar,Siddharth Maurya,Sai Manasa,Raktim Goswami,Abhishek Bairagi , G V V Sharma$^{*}$% <-this % stops a space
 \thanks{*The author is with the Department
 of Electrical Engineering, Indian Institute of Technology, Hyderabad
 502285 India e-mail:  gadepall@iith.ac.in.}
@@ -243,16 +243,16 @@ A brief description about the Efficient Transmitter Design techniques. Which inc
 
 For 8PSK, 16APSK, and 32APSK modulation formats, the output of the LDPC encoder shall be bit interleaved using a
 block interleaver. Data is serially written into the interleaver column-wise, and serially read out row-wise (the MSB of BBHEADER is read out first, except 8PSK rate 3/5 case where MSB of BBHEADER is read out third).\\
-
-
-Fig. \ref{fig:inter} shows the various interleaving methods.
 \begin{figure}
 \begin{center}
-\includegraphics[width=\columnwidth]{/bit_inter}
+\includegraphics[width=\columnwidth]{./figs/Interleaver.eps}
 \end{center}
-\caption{Bit Interleaver Structure for various mapping schemes}
+\caption{Bit interleaver for 8PSK}
 \label{fig:inter}
 \end{figure}
+
+Fig. \ref{fig:inter} shows the comparison of 8PSK mapping schem with interleaver and without interleaver.
+
 The configuration of the block interleaver for each modulation format is specified \cite{dvb}.
 
 

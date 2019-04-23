@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2018.1.31)  23 APR 2019 12:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2018.1.31)  23 APR 2019 12:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -585,54 +585,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--2
 \tf@toc=\write3
 \openout3 = `others.toc'.
 
-
-Underfull \hbox (badness 2253) in paragraph at lines 244--246
-\OT1/txr/m/n/12 and se-ri-ally read out row-wise (the MSB of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 244--246
-
- []
-
-File: ./images/bit_inter.eps Graphic file (type eps)
-<./images/bit_inter.eps>
-
-LaTeX Warning: Citation `dvb' on page 1 undefined on input line 256.
-
+File: ./figs/Interleaver.eps Graphic file (type eps)
+ <./figs/Interleaver.eps>
 File: ./images/pl_framing.eps Graphic file (type eps)
-<./images/pl_framing.eps>
+ <./images/pl_framing.eps>
 Overfull \hbox (4.57164pt too wide) detected at line 287
 \OML/txmi/m/it/12 K \OT1/txr/m/n/12 = []
  []
 
 File: ./images//parameters_pl_frame.eps Graphic file (type eps)
 <./images//parameters_pl_frame.eps>
+Underfull \vbox (badness 1077) has occurred while \output is active []
 
-LaTeX Warning: Citation `dvb' on page 1 undefined on input line 300.
-
-[1
+ [1
 
 
 ]
+(./others.bbl) [2
 
-LaTeX Warning: Citation `dvb' on page 2 undefined on input line 306.
-
-No file others.bbl.
-[2
-
-] (./others.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] (./others.aux) ) 
 Here is how much of TeX's memory you used:
- 7276 strings out of 493305
- 106891 string characters out of 6139897
- 169286 words of memory out of 5000000
- 10607 multiletter control sequences out of 15000+600000
+ 7286 strings out of 493305
+ 107044 string characters out of 6139897
+ 168286 words of memory out of 5000000
+ 10614 multiletter control sequences out of 15000+600000
  62210 words of font info for 151 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
  36i,17n,38p,286b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on others.dvi (2 pages, 6380 bytes).
+Output written on others.dvi (2 pages, 6872 bytes).
