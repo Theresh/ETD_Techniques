@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2018.1.31)  24 APR 2019 10:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2018.1.31)  24 APR 2019 10:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -604,14 +604,31 @@ File: ./images/plscode.eps Graphic file (type eps)
 
 <./images/plscode.eps>
 File: ./images/parameters_pl_frame.eps Graphic file (type eps)
- <./images/parameters_pl_frame.eps> [2] (./others.bbl)
-[3
+ <./images/parameters_pl_frame.eps> [2]
+Overfull \hbox (15.1313pt too wide) detected at line 379
+\OML/txmi/m/it/12 Y[]\OT1/txr/m/n/12 (\OML/txmi/m/it/12 m\OT1/txr/m/n/12 ) = \O
+ML/txmi/m/it/12 H[]\OT1/txr/m/n/12 (\OML/txmi/m/it/12 m\OT1/txr/m/n/12 ) \OMS/t
+xsy/m/n/12 ^^C \OML/txmi/m/it/12 X[] \OT1/txr/m/n/12 + \OML/txmi/m/it/12 V[]\OT
+1/txr/m/n/12 (\OML/txmi/m/it/12 m\OT1/txr/m/n/12 ) \OML/txmi/m/it/12 m \OT1/txr
+/m/n/12 = 1\OML/txmi/m/it/12 ; [] ; M\OT1/txr/m/n/12 ; \OML/txmi/m/it/12 k \OT1
+/txr/m/n/12 = 1\OML/txmi/m/it/12 ; [] ; N
+ []
 
-] (./others.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+Underfull \hbox (badness 2073) in paragraph at lines 379--381
+\OT1/txr/m/n/12 Where,$\OML/txmi/m/it/12 H[]$ \OT1/txr/m/n/12 rep-re-sents the 
+pulse shape,$\OML/txmi/m/it/12 V[]\OT1/txr/m/n/12 (\OML/txmi/m/it/12 m\OT1/txr/
+m/n/12 ) \OMS/txsy/m/n/12 ^^X
+ []
 
- ) 
+
+Overfull \hbox (14.47795pt too wide) in paragraph at lines 385--385
+[] 
+ []
+
+(./others.bbl) [3
+
+] (./others.aux) ) 
 Here is how much of TeX's memory you used:
  7300 strings out of 493305
  107269 string characters out of 6139897
@@ -621,4 +638,4 @@ Here is how much of TeX's memory you used:
  960 hyphenation exceptions out of 8191
  36i,17n,38p,286b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on others.dvi (3 pages, 10996 bytes).
+Output written on others.dvi (3 pages, 11372 bytes).

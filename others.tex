@@ -374,9 +374,17 @@ Eq.\eqref{eq:plen} specifies the total length $K$ of the PLFRAME. Smiliarly, Fig
 %\end{itemize}
 
 \section{Pulse Shaping}
-\begin{itemize}
-\item After randomization, the signals shall be square root raised cosine filtered. The roll-off factor shall be $\alpha$ = 0,35, 0,25and 0,20, depending on the service requirements.
-\item Suitable $H(f)$ will be choosen from the \cite{dvb}.
+\begin{equation}
+Y_k(m)=H_k(m) \ast X_k + V_k(m) \quad m=1,\dots, M; k=1,\dots,N
+\end{equation}
+Where,$H_k$ represents the pulse shape,$V_k(m) \sim \mathcal{N}\brak{0,\sigma^2} $.
+
+At the Receiver we will,
+\begin{align}
+Y_k(m)\ast H^*_k(M-m) =H^*_k(M-m)\ast H_k(m) \ast X_k + V_k(m) 
+\end{align}
+
+$H(f)$ will be choosen from the \cite{dvb} which is converted to time domain form to get $ H_k(m)$
 \begin{align}
 H(f) =\begin{cases}
 1& \abs{f}<f_N(1-\alpha)\\
@@ -384,8 +392,18 @@ H(f) =\begin{cases}
 0&\abs{f}>f_N(1-\alpha)
 \end{cases}
 \end{align}
-
-\end{itemize}
+%\begin{itemize}
+%\item After randomization, the signals shall be square root raised cosine filtered. The roll-off factor shall be $\alpha$ = 0,35, 0,25and 0,20, depending on the service requirements.
+%\item Suitable $H(f)$ will be choosen from the \cite{dvb}.
+%\begin{align}
+%H(f) =\begin{cases}
+%1& \abs{f}<f_N(1-\alpha)\\
+%\cbrak{\frac{1}{2}+\frac{1}{2}\sin \frac{\pi}{2}\sbrak{\frac{f_N-\abs{f}}{\alpha}}}^{\frac{1}{2}}&\abs{f}=f_N(1-\alpha)\\
+%0&\abs{f}>f_N(1-\alpha)
+%\end{cases}
+%\end{align}
+%
+%\end{itemize}
 
 \bibliography{IEEEabrv,others.bib}
 \end{document}
