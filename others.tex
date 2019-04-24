@@ -239,10 +239,17 @@ A brief description about the Efficient Transmitter Design techniques. Which inc
 %\IEEEpeerreviewmaketitle
 
 \section{Interleaver/Deinterleaver}
+For 8PSK, 16APSK, and 32APSK mapping schemes we will use
+block interleaver to mitigate the effects of bursty channel. For Concatenated Channel coding schemes bit interleaving is necessary. The mapped data is serially put as column wise and searially read out row wise. \\
+\begin{figure}
+\begin{center}
+\includegraphics[width=\columnwidth]{/bitinterleaver_8psk}
+\end{center}
+\caption{Bit Interleaver Structure for 8PSK mapping scheme}
+\label{fig:bit8psk}
+\end{figure}
+Fig. \ref{fig:bit8psk} shows bit interleaving scheme for 8PSK.
 
-
-For 8PSK, 16APSK, and 32APSK modulation formats, the output of the LDPC encoder shall be bit interleaved using a
-block interleaver. Data is serially written into the interleaver column-wise, and serially read out row-wise (the MSB of BBHEADER is read out first, except 8PSK rate 3/5 case where MSB of BBHEADER is read out third).\\
 \begin{figure}
 \begin{center}
 \includegraphics[width=\columnwidth]{./figs/Interleaver.eps}
@@ -251,7 +258,7 @@ block interleaver. Data is serially written into the interleaver column-wise, an
 \label{fig:inter}
 \end{figure}
 
-Fig. \ref{fig:inter} shows the comparison of 8PSK mapping schem with interleaver and without interleaver.
+Similarly, Fig. \ref{fig:inter} shows the BER comparison of 8PSK mapping scheme with interleaver and without interleaver.
 
 The configuration of the block interleaver for each modulation format is specified \cite{dvb}.
 
@@ -260,8 +267,9 @@ The configuration of the block interleaver for each modulation format is specifi
 
 
 \section{Physical Layer Framing(PLFRAMING)}
-\begin{itemize}
-\item In order to form the PLFRAME which is used for receiver synchronization, a header is inserted in the beginning of each frame.
+
+PLFRAMING useful for the specifying modulation scheme and code rate and frame characteristics.In receiver synchronization, Frame synchronization plays a key role. 
+%\item In order to form the PLFRAME which is used for receiver synchronization, a header is inserted in the beginning of each frame.
 
 
 
@@ -273,11 +281,69 @@ The configuration of the block interleaver for each modulation format is specifi
 \label{fig:splframe}
 \end{figure}
 
+ Fig. \ref{fig:splframe} shows the Typical Structure of PLFRAME according to \cite{dvb}.
+ \begin{equation}\label{eq:1}
+I_{2i-1}=Q_{2i-1}=\frac{1}{\sqrt{2}}(1-2y_{2i-1}) \quad i=1,2,\dots,45
+\end{equation}
+\begin{equation}\label{eq:2}
+I_{2i}=-Q_{2i}=-\frac{1}{\sqrt{2}}(1-2y_{2i-1}) \quad 1,2\dots,45
+\end{equation}
+The PLHEADER, represented by binary stream , $y_1,\dots,y_{90}$ is modulated into 90 $\frac{\pi}{2}$-BPSK symbols. Eqs.\eqref{eq:1} and \eqref{eq:2} shows the generation of $\frac{\pi}{2}$-BPSK mapping.
+
+
+\begin{itemize}
+\item PLHEADER consists of two fields,
+\begin{enumerate}
+\item Starting of Frame(SOF) 26 symbols
+\item Physical Layer Signalling Code (PLSC) , 64 symbols
+\end{enumerate}
+\end{itemize} 
+\subsection{Generation of SOF}
+SOF consistutes a fixed sequence $18D2E82_{HEX}$ in binary format which is from right to left.
+\subsection{Generation of PLSC}
+\begin{itemize}
+\item Generation of PLSC involes definining 7 symbols and multiplying first 6 symbols with the defined $G$ matrix in \cite{dvb}. First 5 symbols called as MODCOD filed and next 2 symbols as TYPE field.
+\item First 5 symbols represents MODCOD which specifies Frame's mapping scheme and code rate.
+\item Next 2 symbols represents TYPE filed which specifies Frame length and presence and absesnce of pilot fileds.
+(0 = normal: 64 800 bits; 1 = short: 16 200 bits) ; (0 = no pilots, 1 = pilots)
+\end{itemize}
+%
+\begin{figure}
+\begin{center}
+\includegraphics[width=\columnwidth]{/MODCOD}
+\end{center}
+\caption{MODCOD coding for various mapping schemes}
+\label{fig:modcod}
+\end{figure}
+%
+%
+\begin{figure}
+\begin{center}
+\includegraphics[width=\columnwidth]{/plscode}
+\end{center}
+\caption{Physical Layer Signalling generation}
+\label{fig:pls gen}
+\end{figure}
+%
+ Fig. \ref{fig:modcod} shows the MODCOD coding for various mapping schemes. Similarly, Fig. \ref{fig:pls gen} shows the generation of 64 bits.
  
-\item If pilots are used, then a 36 symbols
-pilot field is inserted every 16 slots of data symbols. Given that a PLFRAME cannot terminate to a pilot field, the total number of pilot fields is $\alpha_{PIL}=\left\lfloor \frac{(S-1)}{16} \right\rfloor$
-\item The total length of the PLFRAME in symbols is 
+ After the generation of PLS code, we will again scramble the PLS Code with the fixed SCR sequence which is defined in the \cite{dvb}.
+ 
 \begin{equation}
+PLSC=PLSC \oplus SCR
+\end{equation}
+\subsection{Generation of Pilots}
+%
+\begin{figure}
+\begin{center}
+\includegraphics[width=\columnwidth]{/parameters_pl_frame}
+\end{center}
+\caption{paramters of plframe}
+\label{fig:plframe}
+\end{figure}
+%
+Pilot block consists of $P=36$ symbols. Each pilot is composed of un-modulated complex symbol.Where, $I=Q=\frac{1}{\sqrt{2}}$ The first pilot block inserted 16 slots after the PLHEADER and next is inserted after the 32 slots and so on.
+\begin{equation}\label{eq:plen}
 K = 
 \begin{cases}
 90\times (S+1)  & \textit{with out pilots}
@@ -285,20 +351,27 @@ K =
 90\times (S+1) + 36\times \alpha_{PIL}  & \textit{with pilots}
 \end{cases}
 \end{equation}
-%\begin{center}
-%\includegraphics[scale=0.35]{/parameters_pl_frame}
-%\end{center} 
+Where , $\alpha_{PIL}=\left\lfloor \frac{(S-1)}{16} \right\rfloor$.\\
+Eq.\eqref{eq:plen} specifies the total length $K$ of the PLFRAME. Smiliarly, Fig. \ref{fig:plframe} Shows the Parameters of PLFRAME.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=\columnwidth]{//parameters_pl_frame}
-\end{center}
-\caption{paramters of plframe}
-\label{fig:plframe}
-\end{figure}
-
-\item The different frame formats,parameters of the normal andshort DVB-S2 frame for all constellation formats were tabulated in above table as  specified in \cite{dvb}
-\end{itemize}
+% \begin{itemize}
+%%\item If pilots are used, then a 36 symbols
+%%pilot field is inserted every 16 slots of data symbols. Given that a PLFRAME cannot terminate to a pilot field, the total number of pilot fields is $\alpha_{PIL}=\left\lfloor \frac{(S-1)}{16} \right\rfloor$
+%%\item The total length of the PLFRAME in symbols is 
+%%\begin{equation}
+%%K = 
+%%\begin{cases}
+%%90\times (S+1)  & \textit{with out pilots}
+%%\\
+%%90\times (S+1) + 36\times \alpha_{PIL}  & \textit{with pilots}
+%%\end{cases}
+%%\end{equation}
+%%\begin{center}
+%%\includegraphics[scale=0.35]{/parameters_pl_frame}
+%%\end{center} 
+%
+%\item The different frame formats,parameters of the normal andshort DVB-S2 frame for all constellation formats were tabulated in above table as  specified in \cite{dvb}
+%\end{itemize}
 
 \section{Pulse Shaping}
 \begin{itemize}

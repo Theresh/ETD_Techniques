@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2018.1.31)  23 APR 2019 12:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2018.1.31)  24 APR 2019 10:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -585,32 +585,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--2
 \tf@toc=\write3
 \openout3 = `others.toc'.
 
-File: ./figs/Interleaver.eps Graphic file (type eps)
- <./figs/Interleaver.eps>
-File: ./images/pl_framing.eps Graphic file (type eps)
- <./images/pl_framing.eps>
-Overfull \hbox (4.57164pt too wide) detected at line 287
-\OML/txmi/m/it/12 K \OT1/txr/m/n/12 = []
+File: ./images/bitinterleaver_8psk.eps Graphic file (type eps)
+ <./images/bitinterleaver_8psk.eps>
+Underfull \hbox (badness 1852) in paragraph at lines 242--252
+[]\OT1/txr/m/n/12 For 8PSK, 16APSK, and 32APSK map-ping
  []
 
-File: ./images//parameters_pl_frame.eps Graphic file (type eps)
-<./images//parameters_pl_frame.eps>
-Underfull \vbox (badness 1077) has occurred while \output is active []
-
- [1
+File: ./figs/Interleaver.eps Graphic file (type eps)
+<./figs/Interleaver.eps>
+File: ./images/pl_framing.eps Graphic file (type eps)
+ <./images/pl_framing.eps> [1
 
 
 ]
-(./others.bbl) [2
+File: ./images/MODCOD.eps Graphic file (type eps)
+ <./images/MODCOD.eps>
+File: ./images/plscode.eps Graphic file (type eps)
 
-] (./others.aux) ) 
+<./images/plscode.eps>
+File: ./images/parameters_pl_frame.eps Graphic file (type eps)
+ <./images/parameters_pl_frame.eps> [2] (./others.bbl)
+[3
+
+] (./others.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 7286 strings out of 493305
- 107044 string characters out of 6139897
- 168286 words of memory out of 5000000
- 10614 multiletter control sequences out of 15000+600000
+ 7300 strings out of 493305
+ 107269 string characters out of 6139897
+ 170286 words of memory out of 5000000
+ 10627 multiletter control sequences out of 15000+600000
  62210 words of font info for 151 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
- 36i,17n,38p,286b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,17n,38p,286b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on others.dvi (2 pages, 6872 bytes).
+Output written on others.dvi (3 pages, 10996 bytes).
